@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Погода</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__weather-text">Погода здесь</h1>
+        <button class="header__update-geo">
+            <span class="update-geo__span">Обновить геолокацию</span>
+            <i class="fa fa-refresh update-geo__icon"></i>
+        </button>
+    </header>
+    <main class="weather">
+        <section class="weather__current">
+            <div class="weather__current-item">
+                <h2 class="current__city">?</h2>
+                <div class="current__data">
+                    <img class="current__img" src="https://www.pngfind.com/pngs/m/273-2733257_icon-weather-portal-comments-weather-icons-png-white.png"/>
+                    <p class="current__cel">?</p>
+                </div>
+            </div>
+            <ul class="weather__current-item">
+                <li class="current-list__item">
+                    <p class="current-item__title">Ветер</p>
+                    <p class="current-item__value" id="cur_wind">?</p>
+                </li>
+                <li class="current-list__item">
+                    <p class="current-item__title">Облачность</p>
+                    <p class="current-item__value" id="cur_cloudiness">?</p>
+                </li>
+                <li class="current-list__item">
+                    <p class="current-item__title">Давление</p>
+                    <p class="current-item__value" id="cur_pressure">?</p>
+                </li>
+                <li class="current-list__item">
+                    <p class="current-item__title">Влажность</p>
+                    <p class="current-item__value" id="cur_humidity">?</p>
+                </li>
+                <li class="current-list__item">
+                    <p class="current-item__title">Координаты</p>
+                    <p class="current-item__value" id="cur_coordinates">?</p>
+                </li>
+            </ul>
+        </section>
+        <section class="favorites">
+            <h2 class="favorites__title">Избранное</h2>
+            <form class="favorites__form">
+                <input class="favorites__input" placeholder="Добавить новый город"/>
+                <button class="favorites__button"><i class="fa fa-plus"></i></button>
+            </form>
+        </section>
+        <ul class="weather__favorites">
+            <template id="favorites-template">
+                <li>
+                    <ul class="favorites-list">
+                        <li class="favorites-list__title">
+                            <h3 class="favorites-list__city"></h3>
+                            <p class="favorites-list__temp"></p>
+                            <img class="favorites-list__img"/>
+                            <button class="favorites-list__button"><i class="fa fa-close"></i></button>
+                        </li>
+                        <li class="favorites-list__item">
+                            <p class="favorites-item__title">Ветер</p>
+                            <p class="favorites-item__value" id="favorites-wind"></p>
+                        </li>
+                        <li class="favorites-list__item">
+                            <p class="favorites-item__title">Облачность</p>
+                            <p class="favorites-item__value" id="favorites-cloudiness"></p>
+                        </li>
+                        <li class="favorites-list__item">
+                            <p class="favorites-item__title">Давление</p>
+                            <p class="favorites-item__value" id="favorites-pressure"></p>
+                        </li>
+                        <li class="favorites-list__item">
+                            <p class="favorites-item__title">Влажность</p>
+                            <p class="favorites-item__value" id="favorites-humidity"></p>
+                        </li>
+                        <li class="favorites-list__item">
+                            <p class="favorites-item__title">Координаты</p>
+                            <p class="favorites-item__value" id="favorites-coordinates"></p>
+                        </li>
+                    </ul>
+                </li>
+            </template>
+        </ul>
+    </main>
+</body>
+</html>

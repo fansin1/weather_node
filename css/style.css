@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
+main,
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  padding: 1em 2em 1em 2em;
+}
+.header__update-geo {
+  background-color: #BEC8CD;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.update-geo__icon {
+  display: none !important;
+}
+
+.weather__current {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  justify-content: space-between;
+}
+.weather__current-item {
+  display: flex;
+  padding: 1em 2em 1em 2em;
+  flex-direction: column;
+  justify-items: center;
+  margin-bottom: 2em;
+}
+.weather__favorites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  justify-content: space-between;
+}
+
+.current__data {
+  display: flex;
+  align-items: center;
+}
+.current__img {
+  align-self: flex-start;
+  max-width: 8em;
+  max-height: 8em;
+  margin-right: 2em;
+}
+.current__cel {
+  font-size: 5em;
+}
+.current__city {
+  margin-bottom: 1em;
+}
+
+.current-list__item {
+  display: flex;
+  background-color: #BEC8CD;
+  padding: 7px;
+  justify-content: space-between;
+  margin: 0.25em 0 0.25em 0;
+}
+
+.favorites {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em 2em 1em 2em;
+}
+.favorites__form {
+  display: flex;
+  align-items: center;
+}
+.favorites__input {
+  background-color: #BEC8CD;
+  padding: 0.8em;
+  margin-right: 1em;
+  border-radius: 5px;
+  max-width: 400px;
+}
+.favorites__button {
+  font-size: 1em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2em 1em 2em;
+  justify-items: center;
+}
+.favorites-list__title {
+  display: flex;
+  align-items: center;
+}
+.favorites-list__city {
+  min-width: 0;
+  margin-right: 0.5em;
+  font-size: 1.3em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.favorites-list__temp {
+  margin-right: 0.5em;
+  font-size: 1.3em;
+}
+.favorites-list__img {
+  max-height: 2em;
+  margin-right: auto;
+}
+.favorites-list__button {
+  font-size: 1em;
+  min-width: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+.favorites-list__item {
+  display: flex;
+  background-color: #BEC8CD;
+  padding: 7px;
+  justify-content: space-between;
+  margin: 0.25em 0 0.25em;
+  max-width: 450px;
+}
+
+@media screen and (max-width: 695px) {
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+
+  .header {
+    max-width: 240px;
+    padding: 0.3em 0.6em 0.3em 0.6em;
+  }
+
+  .update-geo__span {
+    display: none;
+  }
+  .update-geo__icon {
+    display: block !important;
+  }
+
+  .favorites {
+    padding: 0.3em 0.6em 0.3em 0.6em;
+  }
+
+  .weather__current {
+    grid-template-columns: repeat(auto-fit, 250px);
+  }
+  .weather__current-item {
+    padding: 0.3em 0.6em 0.3em 0.6em;
+    margin-bottom: 0;
+  }
+  .weather__favorites {
+    grid-template-columns: repeat(auto-fit, 250px);
+  }
+
+  .current__img {
+    max-width: 4em;
+    max-height: 4em;
+    margin-right: 0.8em;
+  }
+  .current__cel {
+    font-size: 3em;
+  }
+  .current__city {
+    margin-bottom: 1em;
+  }
+
+  .favorites-list {
+    padding: 0.3em 0.6em 0.3em 0.6em;
+  }
+  .favorites-list__city {
+    font-size: 1.1em;
+  }
+  .favorites-list__temp {
+    font-size: 1.1em;
+  }
+  .favorites-list__img {
+    max-height: 1em;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 515px) {
+  .favorites {
+    flex-wrap: wrap;
+  }
+  .favorites__title {
+    flex: 0 0 100%;
+    margin-bottom: 0.4em;
+  }
+  .favorites__form {
+    flex: 0 0 100%;
+  }
+  .favorites__input {
+    display: block;
+    flex-grow: 1;
+    max-width: 500px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
